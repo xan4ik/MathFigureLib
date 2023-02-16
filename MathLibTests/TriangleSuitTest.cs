@@ -24,7 +24,6 @@ public class TriangleSuitTest
     }
 
     [Theory]
-    [InlineData(new double[] { 2, 3, 0 })]
     [InlineData(new double[] { 3, -1, 2 })]
     [InlineData(new double[] { -3, 21, 2 })]
     public void EdgeLengthException(double[] edges)

@@ -10,11 +10,11 @@ public abstract class ValidationDecorator<T> : IDataValidator<T>
 
     public void Validate(T data)
     {
-        OnValidateData(data);
         if(inner is not null) 
         {
             inner.Validate(data);
         }
+        OnValidateData(data);
     }
 
     protected abstract void OnValidateData(T data);
