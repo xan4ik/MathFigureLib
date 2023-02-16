@@ -3,9 +3,14 @@
 public abstract class ValidationDecorator<T> : IDataValidator<T>
 {
     private IDataValidator<T>? inner;
-    public ValidationDecorator(IDataValidator<T>? validator)
+    public ValidationDecorator(IDataValidator<T> validator)
     {
         inner = validator;
+    }
+
+    public ValidationDecorator()
+    { 
+        inner = null;
     }
 
     public void Validate(T data)

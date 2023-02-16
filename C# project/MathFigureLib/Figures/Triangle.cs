@@ -40,6 +40,7 @@ public class Triangle : ValidatableFigure<double[]>
     protected override IDataValidator<double[]> GetValidator()
     {
         return new TriangleExistingValidator(
-                new LessThenZeroLenghtValidator());
+                    new AgrumentCountValidator(
+                        new LessThenZeroLenghtValidator(),3));
     }
 }
