@@ -5,7 +5,7 @@ namespace MathFigureLib;
 
 public class Circle : ValidatableFigure<double>
 {
-    public Circle(double data) : base(data)
+    public Circle(double radius) : base(radius)
     { }
 
     public double Radius => data;

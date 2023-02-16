@@ -5,7 +5,7 @@ namespace MathFigureLib;
 
 public class Triangle : ValidatableFigure<double[]>
 {
-    public Triangle(params double[] data) : base(data)
+    public Triangle(params double[] edges) : base(edges)
     { }
 
     public IEnumerable<double> Sides => data; 

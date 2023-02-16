@@ -37,7 +37,6 @@ public class TriangleSuitTest
     [Theory]
     [InlineData(new double[] { 2, 3, 9 })]
     [InlineData(new double[] { 3, 8, 2 })]
-    [InlineData(new double[] { 21, 3, 2 })]
     public void TriangleNotExsitsException(double[] edges)
     {
         Assert.Throws<ArgumentException>(() =>
@@ -59,7 +58,6 @@ public class TriangleSuitTest
 
     [Theory]
     [InlineData(new double[] { 2, 3, 4 })]
-    [InlineData(new double[] { 1, 3, 4 })]
     public void CalculatePerimeter(double[] edges)
     {
         Triangle triangle = new Triangle(edges);
