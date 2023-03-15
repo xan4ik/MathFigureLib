@@ -5,7 +5,7 @@ namespace MathFigureLib;
 public abstract class ValidatableFigure<T> : IFigure
 {
     private IDataValidator<T> validator;
-    protected T data;
+    private T data;
 
     public ValidatableFigure(T data)
     {
@@ -15,6 +15,15 @@ public abstract class ValidatableFigure<T> : IFigure
         this.data = data;
     }
 
+    protected T Data 
+    {
+        get => data;
+        set 
+        {
+            validator.Validate(value);
+            this.data = value;
+        }
+    }
 
     protected abstract IDataValidator<T> GetValidator();
 

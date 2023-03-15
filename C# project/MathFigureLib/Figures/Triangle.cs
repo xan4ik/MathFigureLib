@@ -8,19 +8,19 @@ public class Triangle : ValidatableFigure<double[]>
     public Triangle(params double[] edges) : base(edges)
     { }
 
-    public IEnumerable<double> Sides => data; 
+    public IEnumerable<double> Sides => Data; 
 
     public override double CalculatePerimeter()
     {
-        return data.Sum();
+        return Data.Sum();
     }
 
     public override double CalculateArea()
     {
         var halfOfperimetr = CalculatePerimeter() / 2;
-        var halfMinusA = halfOfperimetr - data[0];
-        var halfMinusB = halfOfperimetr - data[1];
-        var halfMinusC = halfOfperimetr - data[2];
+        var halfMinusA = halfOfperimetr - Data[0];
+        var halfMinusB = halfOfperimetr - Data[1];
+        var halfMinusC = halfOfperimetr - Data[2];
         return Sqrt(halfOfperimetr * halfMinusA * halfMinusB * halfMinusC);
     }
 
@@ -28,7 +28,7 @@ public class Triangle : ValidatableFigure<double[]>
     {
         const int digitsAfterPoint = 2;
 
-        var sorted = data.OrderBy(x => x).ToArray();
+        var sorted = Data.OrderBy(x => x).ToArray();
         double aSquare = Pow(sorted[0], 2);
         double bSquare = Pow(sorted[1], 2);
         double cSquare = Pow(sorted[2], 2);
@@ -44,3 +44,4 @@ public class Triangle : ValidatableFigure<double[]>
                         new LessThenZeroLenghtValidator(),3));
     }
 }
+
