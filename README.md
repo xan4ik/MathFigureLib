@@ -16,4 +16,4 @@
   <code>Circle</code> - вычисляет площадь и периметр круга по радиусу
 
 ## Async features
-<code>TriangleThreadSafe</code> из пространства имен <code>MathFigureLib.AsyncFigures</code> является потокобезопасным, за счет использования сруктуры данных <code>TriangleSides</code> алгоритмов. Также данный класс поддерживает интерфейс <code>IAsyncFigure</code>, что позволяет выполнять операции вычисления площади и фигуры асинхронно.
+<code>TriangleThreadSafe</code> из пространства имен <code>MathFigureLib.AsyncFigures</code> является потокобезопасным, за счет использования сруктуры данных <code>TriangleSides</code>. Также данный класс поддерживает интерфейс <code>IAsyncFigure</code>, что позволяет выполнять операции вычисления площади и периметра фигуры асинхронно.
