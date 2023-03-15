@@ -1,0 +1,38 @@
+CREATE TABLE Product
+(
+    ID INT PRIMARY KEY IDENTITY,
+    Name VARCHAR(30),
+);
+
+CREATE TABLE Category
+(
+    ID INT PRIMARY KEY IDENTITY,
+    Name VARCHAR(30),
+);
+
+CREATE TABLE ProductCategory
+(
+    Id INT PRIMARY KEY IDENTITY,
+    ProductID INT REFERENCES Product(ID) ON DELETE CASCADE,
+    CategoryID INT REFERENCES Category(ID) ON DELETE CASCADE,
+);
+
+INSERT INTO Product (name) VALUES ('Chips');
+INSERT INTO Product (name) VALUES ('Meat');
+INSERT INTO Product (name) VALUES ('Banana');
+INSERT INTO Product (name) VALUES ('Waterlemon');
+
+INSERT INTO Category (name) VALUES ('Drink');
+INSERT INTO Category (name) VALUES ('Some else');
+INSERT INTO Category (name) VALUES ('Fruit');
+
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES (1,1);
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES (3,3);
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES (4,3);
+
+
+select Product.id, Product.name, Category.name as Category
+from Product 
+left join ProductCategory on Product.id = ProductCategory.ProductID
+left join Category on Category.id = ProductCategory.CategoryID
+
